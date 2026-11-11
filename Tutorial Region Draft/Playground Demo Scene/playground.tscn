@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c00o5fajkqskb"]
+
+[ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_wt17y"]
+[ext_resource type="PackedScene" uid="uid://ddl1aw734gfhy" path="res://moveable_object.tscn" id="2_wt17y"]
+[ext_resource type="PackedScene" uid="uid://crwa7ohtj2u04" path="res://npc.tscn" id="3_m8u5f"]
+
+[node name="Playground" type="Node2D" unique_id=455894414]
+
+[node name="Player" parent="." unique_id=1052777298 instance=ExtResource("1_wt17y")]
+
+[node name="MoveableObject" parent="." unique_id=1020680328 instance=ExtResource("2_wt17y")]
+
+[node name="NPC" parent="." unique_id=1836024670 instance=ExtResource("3_m8u5f")]
+position = Vector2(304, 133)

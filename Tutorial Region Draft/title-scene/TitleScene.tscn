@@ -1,0 +1,261 @@
+[gd_scene format=3 uid="uid://nu4reo7kkn10"]
+
+[ext_resource type="Script" uid="uid://dnwd3ubjrgae4" path="res://title-scene/title_scene.gd" id="1_0kr3w"]
+[ext_resource type="VideoStream" uid="uid://b61yxjoq1bsnf" path="res://title-scene/title-screen-vid-fr-half.ogv" id="1_dh5bh"]
+[ext_resource type="Script" uid="uid://cugihlmt3f7ik" path="res://title-scene/title-bg-video.gd" id="3_5kruv"]
+[ext_resource type="Texture2D" uid="uid://cnnivjbctw4vv" path="res://title-scene/title-screen-texture.png" id="4_wmwn0"]
+[ext_resource type="Theme" uid="uid://cvoqq4tuinvq7" path="res://00_Globals/main_theme.tres" id="5_hebjl"]
+[ext_resource type="PackedScene" uid="uid://c7ttnisf3eq8w" path="res://Levels/PlayerSpawn.tscn" id="6_sv6t4"]
+
+[sub_resource type="Animation" id="Animation_sv6t4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_hebjl"]
+resource_name = "default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e0o5p"]
+_data = {
+&"RESET": SubResource("Animation_sv6t4"),
+&"default": SubResource("Animation_hebjl")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ptions"]
+content_margin_left = 32.0
+content_margin_top = 32.0
+content_margin_right = 32.0
+content_margin_bottom = 32.0
+bg_color = Color(0, 0, 0, 0.82)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 15
+
+[node name="TitleScene" type="Node2D" unique_id=953777906]
+script = ExtResource("1_0kr3w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=111399880]
+process_mode = 3
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=961963936]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="Control" parent="CanvasLayer/Control" unique_id=633003139]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Control/Backdrop" unique_id=878708379]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_dh5bh")
+autoplay = true
+expand = true
+loop = true
+script = ExtResource("3_5kruv")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Backdrop" unique_id=833214500]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.85)
+
+[node name="TitleLogo" type="Sprite2D" parent="CanvasLayer/Control/Backdrop" unique_id=816763936]
+position = Vector2(576, 214.00002)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_wmwn0")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/Backdrop/TitleLogo" unique_id=117904523]
+libraries/ = SubResource("AnimationLibrary_e0o5p")
+autoplay = &"default"
+
+[node name="MainMenu" type="Control" parent="CanvasLayer/Control" unique_id=1637925105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="startButton" type="Button" parent="CanvasLayer/Control/MainMenu" unique_id=505499049]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = 76.0
+offset_right = 107.5
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../quitButton")
+focus_neighbor_bottom = NodePath("../optionButton")
+accessibility_name = "Start Button"
+accessibility_description = "Pressing this button starts up the action-adventure RPG experience."
+theme = ExtResource("5_hebjl")
+text = "start game"
+
+[node name="optionButton" type="Button" parent="CanvasLayer/Control/MainMenu" unique_id=965424495]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = 127.5
+offset_right = 107.5
+offset_bottom = 175.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../startButton")
+focus_neighbor_bottom = NodePath("../quitButton")
+accessibility_name = "Start Button"
+accessibility_description = "Pressing this button starts up the action-adventure RPG experience."
+theme = ExtResource("5_hebjl")
+text = "options"
+
+[node name="quitButton" type="Button" parent="CanvasLayer/Control/MainMenu" unique_id=564838340]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = 188.0
+offset_right = 107.5
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../optionButton")
+focus_neighbor_bottom = NodePath("../startButton")
+accessibility_name = "Start Button"
+accessibility_description = "Pressing this button starts up the action-adventure RPG experience."
+theme = ExtResource("5_hebjl")
+text = "quit"
+
+[node name="OptionsScreen" type="Control" parent="CanvasLayer/Control" unique_id=1445523112]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -220.0
+offset_right = 300.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/OptionsScreen" unique_id=1732443789]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_hebjl")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ptions")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/OptionsScreen/PanelContainer" unique_id=1732443790]
+layout_mode = 2
+theme = ExtResource("5_hebjl")
+theme_override_constants/separation = 12
+
+[node name="optionsLabel" type="Label" parent="CanvasLayer/Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=1078430344]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "options"
+horizontal_alignment = 1
+
+[node name="brightnessLabel" type="Label" parent="CanvasLayer/Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=1509526271]
+layout_mode = 2
+text = "brightness"
+
+[node name="brightnessSlider" type="HSlider" parent="CanvasLayer/Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=1307762228]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_top = NodePath("../masterVolumeSlider")
+focus_neighbor_bottom = NodePath("../masterVolumeSlider")
+theme = ExtResource("5_hebjl")
+step = 0.01
+page = 0.01
+
+[node name="masterVolumeLabel" type="Label" parent="CanvasLayer/Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=2050340587]
+layout_mode = 2
+text = "master volume"
+
+[node name="masterVolumeSlider" type="HSlider" parent="CanvasLayer/Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=1175092583]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_top = NodePath("../brightnessSlider")
+focus_neighbor_bottom = NodePath("../backButton")
+theme = ExtResource("5_hebjl")
+step = 0.1
+page = 0.1
+
+[node name="backButton" type="Button" parent="CanvasLayer/Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=1589685092]
+layout_mode = 2
+focus_neighbor_top = NodePath("../masterVolumeSlider")
+focus_neighbor_bottom = NodePath("../brightnessSlider")
+text = "back"
+
+[node name="PlayerSpawn" parent="." unique_id=1857200253 instance=ExtResource("6_sv6t4")]
+position = Vector2(574, 391)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1924986681]
+max_polyphony = 4

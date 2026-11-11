@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://crwa7ohtj2u04"]
+
+[ext_resource type="Texture2D" uid="uid://bl5ld84ar8wud" path="res://icon.svg" id="1_ideak"]
+[ext_resource type="Script" path="res://npc.gd" id="1_xxcha"]
+[ext_resource type="Texture2D" path="res://Untitled design.png" id="3_kh24r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxcha"]
+size = Vector2(128, 127.810684)
+
+[node name="NPC" type="StaticBody2D" unique_id=575279732]
+position = Vector2(216, 136)
+scale = Vector2(0.5, 0.65)
+script = ExtResource("1_xxcha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=376417830]
+scale = Vector2(0.5, 0.6499999)
+shape = SubResource("RectangleShape2D_xxcha")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1021134385]
+position = Vector2(0, -0.5)
+scale = Vector2(0.5, 0.6499999)
+texture = ExtResource("1_ideak")
+
+[node name="Message" type="Label" parent="." unique_id=1590213720]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -69.230774
+offset_right = 141.0
+offset_bottom = -46.230774
+grow_horizontal = 2
+grow_vertical = 0
+text = "Go kill the monsters in the dungoen."
+horizontal_alignment = 1
+
+[node name="TimeShown" type="Timer" parent="Message" unique_id=1432408929]
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=1355165921]
+position = Vector2(0, -73.84615)
+scale = Vector2(0.4090909, 0.36013985)
+texture = ExtResource("3_kh24r")
+
+[connection signal="timeout" from="Message/TimeShown" to="." method="_on_time_shown_timeout"]

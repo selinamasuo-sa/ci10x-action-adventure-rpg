@@ -1,0 +1,114 @@
+[gd_resource type="Theme" format=3 uid="uid://cvoqq4tuinvq7"]
+
+[ext_resource type="FontFile" uid="uid://v5hru3kqyok8" path="res://title-scene/LegendaryDeedsMedium_alpha20251226a.ttf" id="1_es4n7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6ngf"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iet7p"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7s9dx"]
+bg_color = Color(0.023529412, 0.14901961, 0.101960786, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_es4n7"]
+bg_color = Color(0, 1, 0.6117647, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq2fh"]
+bg_color = Color(0.023529412, 0.14901961, 0.101960786, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_636ua"]
+content_margin_left = 0.0
+content_margin_top = 8.0
+content_margin_right = 0.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 1, 0.6117647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.15, 0.09, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_zhl9r"]
+content_margin_left = 0.0
+content_margin_top = 8.0
+content_margin_right = 0.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 1, 0.6117647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.15, 0.09, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb333"]
+content_margin_left = 0.0
+content_margin_top = 8.0
+content_margin_right = 0.0
+content_margin_bottom = 8.0
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.12)
+
+[resource]
+default_font = ExtResource("1_es4n7")
+default_font_size = 26
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.023529412, 0.14901961, 0.101960786, 1)
+Button/colors/font_hover_color = Color(0.023529412, 0.14901961, 0.101960786, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0.99215686, 0.8392157, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 0.99215686, 0.8392157, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBoxFlat_d6ngf")
+Button/styles/focus = SubResource("StyleBoxFlat_iet7p")
+Button/styles/hover = SubResource("StyleBoxFlat_iet7p")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_7s9dx")
+Button/styles/normal = SubResource("StyleBoxFlat_es4n7")
+Button/styles/pressed = SubResource("StyleBoxFlat_dq2fh")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_636ua")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_zhl9r")
+HSlider/styles/slider = SubResource("StyleBoxFlat_vb333")
+Slider/constants/center_grabber = 1

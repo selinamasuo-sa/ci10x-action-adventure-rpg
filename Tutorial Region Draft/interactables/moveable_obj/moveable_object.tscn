@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://ddl1aw734gfhy"]
+
+[ext_resource type="Script" uid="uid://boj28gq1kcrg" path="res://Assets/Scripts/moveable_object.gd" id="1_hko15"]
+[ext_resource type="Texture2D" uid="uid://ciyhbpj0f5ehg" path="res://Tile Maps/Sprites/fantasy_ [version 2.0]/forest_/forest_ [resources].png" id="1_m5afh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lowfric"]
+friction = 0.08
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wg2o2"]
+radius = 3.8873034
+
+[node name="MoveableObject" type="RigidBody2D" unique_id=1020680328]
+position = Vector2(109, 170)
+mass = 20.0
+physics_material_override = SubResource("PhysicsMaterial_lowfric")
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+linear_damp = 5.0
+script = ExtResource("1_hko15")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1855044390]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1809729122]
+position = Vector2(0, 2.0000005)
+scale = Vector2(2.5, 2.578)
+texture = ExtResource("1_m5afh")
+region_enabled = true
+region_rect = Rect2(94.72173, 128.4104, 17.611603, 15.062561)
+
+[node name="moveableObjSouthEast" type="CollisionShape2D" parent="." unique_id=498237273]
+position = Vector2(4, 5)
+rotation = 1.5707964
+scale = Vector2(1.775, 1.775)
+shape = SubResource("CircleShape2D_wg2o2")
+
+[node name="moveableObjSouthWest" type="CollisionShape2D" parent="." unique_id=869521788]
+position = Vector2(-3, 5)
+rotation = 1.5707964
+scale = Vector2(1.775, 1.775)
+shape = SubResource("CircleShape2D_wg2o2")
+
+[node name="moveableObjFarWest" type="CollisionShape2D" parent="." unique_id=342394109]
+position = Vector2(-6, 1)
+rotation = 1.5707964
+scale = Vector2(1.775, 1.775)
+shape = SubResource("CircleShape2D_wg2o2")
+
+[node name="moveableObjNorthWest" type="CollisionShape2D" parent="." unique_id=1924705475]
+position = Vector2(-3, -3)
+rotation = 1.5707964
+scale = Vector2(1.775, 1.775)
+shape = SubResource("CircleShape2D_wg2o2")
+
+[node name="moveableObjNorthEast" type="CollisionShape2D" parent="." unique_id=1809145170]
+position = Vector2(4, -3)
+rotation = 1.5707964
+scale = Vector2(1.775, 1.775)
+shape = SubResource("CircleShape2D_wg2o2")
+
+[node name="moveableObjFarEast" type="CollisionShape2D" parent="." unique_id=1846959417]
+position = Vector2(8, 1)
+rotation = 1.5707964
+scale = Vector2(1.775, 1.775)
+shape = SubResource("CircleShape2D_wg2o2")
+
+[node name="moveableObjCenter" type="CollisionShape2D" parent="." unique_id=1470886227]
+position = Vector2(0.9999924, 1)
+rotation = 1.5707964
+scale = Vector2(1.775, 1.775)
+shape = SubResource("CircleShape2D_wg2o2")
+debug_color = Color(0.48235294, 0.5803922, 0.03529412, 0.41960785)

@@ -1,0 +1,18 @@
+extends Sprite2D
+
+'''
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	play()
+	
+	modulate.a = 0.0
+	
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1.0, fade_duration)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_OUT)
+'''
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass

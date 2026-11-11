@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c00o5fajkqskb"]
+
+[ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://Player/player.tscn" id="1_wt17y"]
+[ext_resource type="PackedScene" uid="uid://d0cxoqsa0xi21" path="res://Props/Plants/plant.tscn" id="5_o00ia"]
+
+[node name="Playground" type="Node2D" unique_id=455894414]
+y_sort_enabled = true
+
+[node name="Player" parent="." unique_id=1052777298 instance=ExtResource("1_wt17y")]
+
+[node name="Plant" parent="." unique_id=1218914619 instance=ExtResource("5_o00ia")]
+position = Vector2(315, 225)
+
+[node name="Plant2" parent="." unique_id=1253962139 instance=ExtResource("5_o00ia")]
+position = Vector2(398, 75)
+
+[node name="Plant3" parent="." unique_id=361758386 instance=ExtResource("5_o00ia")]
+position = Vector2(406, 131)
+
+[node name="Plant4" parent="." unique_id=82189425 instance=ExtResource("5_o00ia")]
+position = Vector2(413, 215)

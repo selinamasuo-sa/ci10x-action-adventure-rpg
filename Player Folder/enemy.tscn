@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dua5owt3akufm"]
+
+[ext_resource type="Script" uid="uid://406o0mrd5sek" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_7k104"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7k104"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7k104")
+}],
+"loop": true,
+"name": &"placeholder",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(134, 132)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=93375537]
+position = Vector2(233, 129)
+motion_mode = 1
+script = ExtResource("1_4gyqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=427973895]
+sprite_frames = SubResource("SpriteFrames_7k104")
+animation = &"placeholder"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=951513981]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_4gyqm")
+
+[node name="AttackCooldown" type="Timer" parent="." unique_id=622170888]
+one_shot = true
+
+[node name="Label" type="Label" parent="." unique_id=76201786]
+offset_top = -115.0
+offset_right = 140.0
+offset_bottom = 23.0
+text = "hit"
+
+[connection signal="timeout" from="AttackCooldown" to="." method="_on_attack_cooldown_timeout"]

@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://58ymop2qxnbg"]
+
+[ext_resource type="Script" uid="uid://cwn204b53c6uh" path="res://GUI/pause_menu/pause_menu.gd" id="1_4w82k"]
+[ext_resource type="Theme" uid="uid://cvoqq4tuinvq7" path="res://00_Globals/main_theme.tres" id="2_yiq8o"]
+[ext_resource type="Script" uid="uid://bccmkslq0anb5" path="res://GUI/common_options_menu/options_menu.gd" id="3_options"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ptions"]
+content_margin_left = 32.0
+content_margin_top = 32.0
+content_margin_right = 32.0
+content_margin_bottom = 32.0
+bg_color = Color(0, 0, 0, 0.82)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 15
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=975239924]
+process_mode = 3
+script = ExtResource("1_4w82k")
+
+[node name="Control" type="Control" parent="." unique_id=1374435352]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_yiq8o")
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1556582790]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.14117648, 0.14117648, 0.14117648, 0.78431374)
+
+[node name="optionsLabel" type="Label" parent="Control" unique_id=38808161]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -147.5
+offset_top = 112.0
+offset_right = 147.5
+offset_bottom = 226.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8156863, 0.8156863, 0.8156863, 1)
+theme_override_font_sizes/font_size = 75
+text = "~ paused ~"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1536437542]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 37.0
+offset_right = 250.0
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_yiq8o")
+
+[node name="resumeButton" type="Button" parent="Control/VBoxContainer" unique_id=2024530511]
+layout_mode = 2
+focus_neighbor_top = NodePath("../toMainButton")
+focus_neighbor_bottom = NodePath("../optionButton")
+accessibility_name = "Start Button"
+accessibility_description = "Pressing this button starts up the action-adventure RPG experience."
+theme = ExtResource("2_yiq8o")
+text = "resume game"
+
+[node name="optionButton" type="Button" parent="Control/VBoxContainer" unique_id=1388618991]
+layout_mode = 2
+focus_neighbor_top = NodePath("../resumeButton")
+focus_neighbor_bottom = NodePath("../toMainButton")
+accessibility_name = "Start Button"
+accessibility_description = "Pressing this button starts up the action-adventure RPG experience."
+theme = ExtResource("2_yiq8o")
+text = "options"
+
+[node name="toMainButton" type="Button" parent="Control/VBoxContainer" unique_id=348174449]
+layout_mode = 2
+focus_neighbor_top = NodePath("../optionButton")
+focus_neighbor_bottom = NodePath("../resumeButton")
+accessibility_name = "Start Button"
+accessibility_description = "Pressing this button starts up the action-adventure RPG experience."
+theme = ExtResource("2_yiq8o")
+text = "quit to title screen"
+
+[node name="OptionsScreen" type="Control" parent="Control" unique_id=1445523112]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -220.0
+offset_right = 300.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_options")
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/OptionsScreen" unique_id=1732443789]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_yiq8o")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ptions")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/OptionsScreen/PanelContainer" unique_id=1732443790]
+layout_mode = 2
+theme = ExtResource("2_yiq8o")
+theme_override_constants/separation = 12
+
+[node name="optionsLabel" type="Label" parent="Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=1078430344]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "options"
+horizontal_alignment = 1
+
+[node name="brightnessLabel" type="Label" parent="Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=1509526271]
+layout_mode = 2
+text = "brightness"
+
+[node name="brightnessSlider" type="HSlider" parent="Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=1307762228]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_top = NodePath("../masterVolumeSlider")
+focus_neighbor_bottom = NodePath("../masterVolumeSlider")
+theme = ExtResource("2_yiq8o")
+step = 0.01
+page = 0.01
+
+[node name="masterVolumeLabel" type="Label" parent="Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=2050340587]
+layout_mode = 2
+text = "master volume"
+
+[node name="masterVolumeSlider" type="HSlider" parent="Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=1175092583]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_top = NodePath("../brightnessSlider")
+focus_neighbor_bottom = NodePath("../backButton")
+theme = ExtResource("2_yiq8o")
+step = 0.1
+page = 0.1
+
+[node name="backButton" type="Button" parent="Control/OptionsScreen/PanelContainer/VBoxContainer" unique_id=1589685092]
+layout_mode = 2
+focus_neighbor_top = NodePath("../masterVolumeSlider")
+focus_neighbor_bottom = NodePath("../brightnessSlider")
+text = "back"
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=2008524260]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = -1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

@@ -1,0 +1,5 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://npc-enemies/Slime/slime.tscn" id="1_slime"]
+
+[node name="Enemy" instance=ExtResource("1_slime")]
